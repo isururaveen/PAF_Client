@@ -96,8 +96,10 @@
                 <img src="./images/agreement.jpg" height="350px" width="400px" alt="">
             </div>
             <div class="col-lg-7 about-text">
-                <h2>Purchase Research Products</h2>
-                <h6><p align="justify">We provide you valued service 24 hours to provide you with the best and most efficient service..</p></h6>
+                <h6><p align="justify">We provide you valued service 24 hours to provide you with the best and most efficient service..<br>
+                    Researchers, Buyers and also investers can make any arragment with their needs under legally agreement. It will provide 
+                    Resonalable and trustworthy deal for every person 
+                </p></h6>
             </div>
         </div>
     </div>
