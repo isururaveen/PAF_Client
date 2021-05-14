@@ -54,7 +54,7 @@ public class buyerAPI extends HttpServlet {
 		
 		response.getWriter().write(output);
 	}
-	
+
 	//Convert Request parameters to Map
 	private static Map getParasMap(HttpServletRequest request)
 	{
@@ -82,8 +82,30 @@ public class buyerAPI extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
 	 */
+	 
+	//doPut for Update buyer details 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Map paras = getParasMap(request);
 		
+		System.out.println(paras.get("firstName").toString());
+		System.out.println(paras.get("lastName").toString());
+		System.out.println(paras.get("address").toString());
+		System.out.println(paras.get("email").toString());
+		System.out.println(paras.get("phoneNo").toString());
+		System.out.println(paras.get("userName").toString());
+		System.out.println(paras.get("password").toString());
+		
+		String output = buyer.UpdateBuyer(paras.get("hidBuyerIDSave").toString(),
+				   paras.get("firstName").toString(),
+		           paras.get("lastName").toString(),  
+		           paras.get("address").toString().replace("+", " "),  
+		           paras.get("email").toString().replace("%40", "@"),
+		           paras.get("phoneNo").toString(),
+		           paras.get("userName").toString(),
+		           paras.get("password").toString()
+		  
+		 ); 
+			response.getWriter().write(output);
 	}
 
 	/**
