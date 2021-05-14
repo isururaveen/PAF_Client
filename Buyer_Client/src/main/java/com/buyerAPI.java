@@ -82,7 +82,7 @@ public class buyerAPI extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
 	 */
-	 
+
 	//doPut for Update buyer details 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Map paras = getParasMap(request);
@@ -111,8 +111,15 @@ public class buyerAPI extends HttpServlet {
 	/**
 	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
 	 */
+
+	//Delete buyer
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		Map paras = getParasMap(request);
+		System.out.println("Delete value" + paras.get("buyerID").toString());
+		String output = buyer.deleteBuyer(paras.get("buyerID").toString());
+		response.getWriter().write(output);
+
 	}
 
 }
